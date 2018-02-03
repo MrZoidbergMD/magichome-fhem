@@ -99,7 +99,7 @@ sub MagicHome_Ready($)
   $attrReconnect = AttrVal($name, "reconnect", 0) ;
   if($hash->{STATE} eq "disconnected" &&  $attrReconnect == 1)
   {
-    return if(defined($hash->{helper}{NEXT_TRY}) && $hash->{helper}{NEXT_TRY} && time() < $hash->{helper}{NEXT_TRY});
+    #return if(defined($hash->{helper}{NEXT_TRY}) && $hash->{helper}{NEXT_TRY} && time() < $hash->{helper}{NEXT_TRY});
     
     Log3 $hash->{NAME}, 3, "MagicHome ($hash->{NAME}) Ready reconnect";
     my $ret = DevIo_OpenDev($hash, 1, "MagicHome_Init", "MagicHome_Callback");
